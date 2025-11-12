@@ -523,7 +523,7 @@ const HomePage: React.FC = () => {
               QUANTUM SECURE SMART-CONTRACT
             </Typography>
             <Typography variant="body2" className="neon-green" sx={{ fontWeight: 500, fontSize: '0.7rem' }}>
-              [ DEVELOPED BY KORIMILLI YASH VENKAT ]
+              [ DEVELOPED BY KORIMILLI YASH VENKAT and KAPARTHI SATHVIK ]
             </Typography>
           </Box>
         </Fade>

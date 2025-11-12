@@ -4,6 +4,7 @@ A stateless hash-based post-quantum approach for securing blockchain application
 
 ## Team Members
 - **KORIMILLI YASH VENKAT** (42613017 - BCT)
+- **KAPARTHI SATHVIK** (42613014 - BCT)
 
 ## Domain
 **Blockchain Technology**
