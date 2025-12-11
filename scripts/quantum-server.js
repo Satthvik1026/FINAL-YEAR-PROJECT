@@ -82,11 +82,11 @@ app.post('/api/verify', async (req, res) => {
     if (!publicKey || !signature || !payload) return res.status(400).json({ error: 'publicKey, signature and payload required' });
 
     console.log('=== VERIFY REQUEST ===');
-    console.log('✓ Public Key present (first 40 chars):', publicKey.substring(0, 40) + '...');
-    console.log('✓ Signature present, length:', signature.length);
-    console.log('✓ Payload present, length:', payload.length);
-    console.log('✓ LeafIdx:', leafIdx);
-    console.log('✓ AuthPath items:', Array.isArray(authPath) ? authPath.length : 0);
+    console.log('[OK] Public Key present (first 40 chars):', publicKey.substring(0, 40) + '...');
+    console.log('[OK] Signature present, length:', signature.length);
+    console.log('[OK] Payload present, length:', payload.length);
+    console.log('[OK] LeafIdx:', leafIdx);
+    console.log('[OK] AuthPath items:', Array.isArray(authPath) ? authPath.length : 0);
 
     // Validation: All required components for SPHINCS+ signature are present
     const hasPublicKey = publicKey && publicKey.includes(':');
@@ -96,7 +96,7 @@ app.post('/api/verify', async (req, res) => {
     const hasAuthPath = Array.isArray(authPath) && authPath.length > 0;
 
     if (!hasPublicKey || !hasSignature || !hasPayload) {
-      console.log('✗ Missing critical components');
+      console.log('[FAIL] Missing critical components');
       res.json({ valid: false });
       return;
     }
@@ -106,12 +106,12 @@ app.post('/api/verify', async (req, res) => {
     const valid = hasPublicKey && hasSignature && hasPayload && hasLeafIdx && hasAuthPath;
     
     console.log('\nVerification Result:');
-    console.log('  Public Key: ✓');
-    console.log('  Signature: ✓');
-    console.log('  Payload: ✓');
-    console.log('  LeafIdx: ' + (hasLeafIdx ? '✓' : '✗'));
-    console.log('  AuthPath: ' + (hasAuthPath ? '✓' : '✗'));
-    console.log('\n' + (valid ? '✓ SIGNATURE VALID' : '✗ SIGNATURE INVALID'));
+    console.log('  Public Key: [OK]');
+    console.log('  Signature: [OK]');
+    console.log('  Payload: [OK]');
+    console.log('  LeafIdx: ' + (hasLeafIdx ? '[OK]' : '[FAIL]'));
+    console.log('  AuthPath: ' + (hasAuthPath ? '[OK]' : '[FAIL]'));
+    console.log('\n' + (valid ? '[OK] SIGNATURE VALID' : '[FAIL] SIGNATURE INVALID'));
     console.log('=== END VERIFY ===\n');
     
     res.json({ valid });

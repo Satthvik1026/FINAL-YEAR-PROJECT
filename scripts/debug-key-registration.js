@@ -32,14 +32,14 @@ async function main() {
       mockPublicKey.root
     );
     await tx1.wait();
-    console.log("✅ Direct SPHINCS registration successful");
+    console.log("[OK] Direct SPHINCS registration successful");
     
     // Check if key is registered
     const isRegistered = await sphincs.isPublicKeyRegistered(deployer.address);
     console.log("Key registered in SPHINCS:", isRegistered);
     
   } catch (error) {
-    console.error("❌ Direct SPHINCS registration failed:", error.message);
+    console.error("[ERROR] Direct SPHINCS registration failed:", error.message);
   }
 
   try {
@@ -54,10 +54,10 @@ async function main() {
       { gasLimit: 500000 }
     );
     await tx2.wait();
-    console.log("✅ QuantumToken registration successful");
+    console.log("[OK] QuantumToken registration successful");
     
   } catch (error) {
-    console.error("❌ QuantumToken registration failed:", error.message);
+    console.error("[ERROR] QuantumToken registration failed:", error.message);
   }
 }
 

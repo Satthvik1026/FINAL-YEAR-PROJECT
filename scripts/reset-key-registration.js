@@ -20,9 +20,9 @@ async function main() {
   console.log(`Key registered: ${isRegistered}`);
   
   if (isRegistered) {
-    console.log("\n✅ Your Sepolia setup is complete and ready for quantum transfers!");
-    console.log("✅ You can demonstrate the full working system to your professors");
-    console.log("✅ The key generation step was completed during our setup process");
+    console.log("\n[OK] Your Sepolia setup is complete and ready for quantum transfers!");
+    console.log("[OK] You can demonstrate the full working system to your professors");
+    console.log("[OK] The key generation step was completed during our setup process");
   }
 }
 

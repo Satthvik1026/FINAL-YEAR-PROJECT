@@ -25,7 +25,7 @@ function updateConfig() {
   );
   
   fs.writeFileSync(configPath, content);
-  console.log('✅ Updated Sepolia contract addresses in frontend config');
+  console.log('[OK] Updated Sepolia contract addresses in frontend config');
   console.log('SPHINCS:', SEPOLIA_CONTRACTS.SPHINCS);
   console.log('QUANTUM_TOKEN:', SEPOLIA_CONTRACTS.QUANTUM_TOKEN);
 }
